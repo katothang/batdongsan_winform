@@ -88,21 +88,7 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 			try
 			{
 				
-				/*try
-                {
-					FileStream stream = new FileStream(btnUpload.Text, FileMode.Open, FileAccess.Read);
-					BinaryReader reader = new BinaryReader(stream);
-					file = reader.ReadBytes((int)stream.Length);
-					reader.Close();
-					stream.Close();
-				}
-				catch
-                {
-					MessageBox.Show("Vui lòng chọn tải file lên..");
-					return;
-                }
-				*/
-				sanphamDAO.Instance.themDL(tbMaBDS.Text, tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, float.Parse(tbGiaBDS.Text), biencucbo.taikhoan);
+				sanphamDAO.Instance.themDL(tbMaBDS.Text, tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, decimal.Parse(tbGiaBDS.Text), biencucbo.taikhoan);
 				MessageBox.Show("thêm thành công");
 				//insert vao bang nhap hàng
 				
@@ -138,7 +124,7 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 					fileName = sanphamDAO.Instance.showFilebyID(tbMaBDS.Text).Rows[0]["FileName"].ToString();
 				}
 				*/
-				sanphamDAO.Instance.suaDL(tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, float.Parse(tbGiaBDS.Text), "admin", tbMaBDS.Text);
+				sanphamDAO.Instance.suaDL(tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, decimal.Parse(tbGiaBDS.Text), "admin", tbMaBDS.Text);
 				MessageBox.Show("Sửa Thành Công");
 				//insert vao bang nhap hàng
 
