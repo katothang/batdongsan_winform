@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChiTietSanPham));
             this.label1 = new System.Windows.Forms.Label();
             this.lbMaDBS = new System.Windows.Forms.Label();
             this.lbTrangThai = new System.Windows.Forms.Label();
@@ -70,7 +72,12 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
             this.pcAnh = new System.Windows.Forms.PictureBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnPre = new System.Windows.Forms.PictureBox();
+            this.btnNext = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -277,7 +284,7 @@
             // 
             this.lbThongTin1.AutoSize = true;
             this.lbThongTin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThongTin1.Location = new System.Drawing.Point(366, 356);
+            this.lbThongTin1.Location = new System.Drawing.Point(366, 368);
             this.lbThongTin1.Name = "lbThongTin1";
             this.lbThongTin1.Size = new System.Drawing.Size(93, 20);
             this.lbThongTin1.TabIndex = 103;
@@ -428,7 +435,7 @@
             // 
             this.lbThongTin.AutoSize = true;
             this.lbThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbThongTin.Location = new System.Drawing.Point(551, 355);
+            this.lbThongTin.Location = new System.Drawing.Point(551, 367);
             this.lbThongTin.MaximumSize = new System.Drawing.Size(300, 0);
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(295, 64);
@@ -512,12 +519,42 @@
             this.pcAnh.TabIndex = 124;
             this.pcAnh.TabStop = false;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // btnPre
+            // 
+            this.btnPre.Image = ((System.Drawing.Image)(resources.GetObject("btnPre.Image")));
+            this.btnPre.Location = new System.Drawing.Point(783, 338);
+            this.btnPre.Name = "btnPre";
+            this.btnPre.Size = new System.Drawing.Size(37, 26);
+            this.btnPre.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnPre.TabIndex = 125;
+            this.btnPre.TabStop = false;
+            this.btnPre.Click += new System.EventHandler(this.btnPre_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.Location = new System.Drawing.Point(843, 338);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(37, 26);
+            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNext.TabIndex = 126;
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // ChiTietSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(962, 543);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPre);
             this.Controls.Add(this.pcAnh);
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnXoa);
@@ -564,6 +601,8 @@
             this.Text = "ChiTietSanPham";
             this.Load += new System.EventHandler(this.ChiTietSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,5 +652,8 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnUpload;
         private System.Windows.Forms.PictureBox pcAnh;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox btnPre;
+        private System.Windows.Forms.PictureBox btnNext;
     }
 }

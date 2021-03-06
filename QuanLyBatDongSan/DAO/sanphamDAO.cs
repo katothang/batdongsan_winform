@@ -43,6 +43,17 @@ namespace QuanLyBatDongSan.DAO
             return SQLconnect.Instance.ExecuteQuery(query);
         }
 
+        public List<string> showListFilebyID(string id)
+        {
+            string query = "select id, MaBDS,FileName,GiayTo from FileUpload where MaBDS='" + id + "'";
+            DataTable dataTable = SQLconnect.Instance.ExecuteQuery(query);
+            List<string> lstFile = new List<string>();
+            foreach(DataRow item in dataTable.Rows) {
+                lstFile.Add(item[0].ToString());
+            }
+            return lstFile;
+        }
+
         public DataTable getdownFilebyID(string id)
         {
             string query = "select * from FileUpload where id='" + id + "'";

@@ -20,7 +20,7 @@ namespace QuanLyBatDongSan.DAO
         {
 
         }
-        private static String strSQL = @"Data Source=DESKTOP-TNK6D3G;Initial Catalog=QLBATDONGSAN;Integrated Security=True";
+        private static String strSQL = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLBATDONGSAN;Integrated Security=True";
 
         public DataTable ExecuteQuery(String query)
         {

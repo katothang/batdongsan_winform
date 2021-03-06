@@ -16,11 +16,13 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 {
     public partial class ChiTietSanPham : Form
     {
+        List<string> lstImage = new List<string>();
+        int positionImg = 0;
         public ChiTietSanPham(DataTable dataTable)
         {
             InitializeComponent();
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-           
+            positionImg = 0;
             this.AutoScroll = true;
             lbMaDBS.Text = dataTable.Rows[0]["MaBDS"].ToString();
             lbTrangThai.Text = dataTable.Rows[0]["TrangThai"].ToString();
@@ -44,6 +46,7 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
             cbDSfile.DataSource = sanphamDAO.Instance.showFilebyID(lbMaDBS.Text);
             cbDSfile.DisplayMember = "FileName";
             cbDSfile.ValueMember = "id";
+            lstImage = sanphamDAO.Instance.showListFilebyID(lbMaDBS.Text);
 
 
         }
@@ -220,6 +223,58 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
         private void lbTinhTrang_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPre_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(lstImage.Count > 0)
+                {
+                    if (positionImg<= 0)
+                    {
+                        positionImg = lstImage.Count -1;
+                    }
+                    else
+                    {
+                        positionImg--;
+                    }
+                    DataTable dataTable = sanphamDAO.Instance.getFile(lstImage[positionImg]);
+
+                    pcAnh.Image = byteArrayToImage((byte[])dataTable.Rows[0]["GiayTo"]);
+                }
+                
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lstImage.Count > 0)
+                {
+                    if (positionImg >= lstImage.Count - 1)
+                    {
+                        positionImg = 0;
+                    }
+                    else
+                    {
+                        positionImg++;
+                    }
+                    DataTable dataTable = sanphamDAO.Instance.getFile(lstImage[positionImg]);
+
+                    pcAnh.Image = byteArrayToImage((byte[])dataTable.Rows[0]["GiayTo"]);
+                }
+
+            }
+            catch
+            {
+
+            }
         }
     }
 }
