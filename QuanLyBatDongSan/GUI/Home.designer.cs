@@ -56,7 +56,7 @@
             // 
             // pnDanhMuc
             // 
-            this.pnDanhMuc.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnDanhMuc.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pnDanhMuc.Controls.Add(this.iconDangXuat);
             this.pnDanhMuc.Controls.Add(this.btnDangXuat);
             this.pnDanhMuc.Controls.Add(this.iconNhapHang);
@@ -78,7 +78,7 @@
             // iconDangXuat
             // 
             this.iconDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("iconDangXuat.Image")));
-            this.iconDangXuat.Location = new System.Drawing.Point(75, 525);
+            this.iconDangXuat.Location = new System.Drawing.Point(9, 535);
             this.iconDangXuat.Name = "iconDangXuat";
             this.iconDangXuat.Size = new System.Drawing.Size(58, 46);
             this.iconDangXuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -87,15 +87,15 @@
             // 
             // btnDangXuat
             // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnDangXuat.BackColor = System.Drawing.Color.DarkOrange;
             this.btnDangXuat.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnDangXuat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed;
             this.btnDangXuat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangXuat.ForeColor = System.Drawing.Color.White;
-            this.btnDangXuat.Location = new System.Drawing.Point(65, 516);
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 525);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(271, 65);
+            this.btnDangXuat.Size = new System.Drawing.Size(333, 65);
             this.btnDangXuat.TabIndex = 19;
             this.btnDangXuat.Text = "                     Đăng Xuất";
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -105,7 +105,7 @@
             // iconNhapHang
             // 
             this.iconNhapHang.Image = ((System.Drawing.Image)(resources.GetObject("iconNhapHang.Image")));
-            this.iconNhapHang.Location = new System.Drawing.Point(72, 321);
+            this.iconNhapHang.Location = new System.Drawing.Point(9, 321);
             this.iconNhapHang.Name = "iconNhapHang";
             this.iconNhapHang.Size = new System.Drawing.Size(58, 46);
             this.iconNhapHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -114,15 +114,15 @@
             // 
             // btnNhapHang
             // 
-            this.btnNhapHang.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnNhapHang.BackColor = System.Drawing.Color.DarkOrange;
             this.btnNhapHang.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnNhapHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed;
             this.btnNhapHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             this.btnNhapHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhapHang.ForeColor = System.Drawing.Color.White;
-            this.btnNhapHang.Location = new System.Drawing.Point(62, 311);
+            this.btnNhapHang.Location = new System.Drawing.Point(0, 311);
             this.btnNhapHang.Name = "btnNhapHang";
-            this.btnNhapHang.Size = new System.Drawing.Size(261, 65);
+            this.btnNhapHang.Size = new System.Drawing.Size(323, 65);
             this.btnNhapHang.TabIndex = 17;
             this.btnNhapHang.Text = "                     Tạo Nhóm";
             this.btnNhapHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -132,7 +132,7 @@
             // iconTaiKhoan
             // 
             this.iconTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("iconTaiKhoan.Image")));
-            this.iconTaiKhoan.Location = new System.Drawing.Point(75, 464);
+            this.iconTaiKhoan.Location = new System.Drawing.Point(9, 464);
             this.iconTaiKhoan.Name = "iconTaiKhoan";
             this.iconTaiKhoan.Size = new System.Drawing.Size(58, 46);
             this.iconTaiKhoan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -152,7 +152,7 @@
             // iconKhachHang
             // 
             this.iconKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("iconKhachHang.Image")));
-            this.iconKhachHang.Location = new System.Drawing.Point(72, 393);
+            this.iconKhachHang.Location = new System.Drawing.Point(9, 392);
             this.iconKhachHang.Name = "iconKhachHang";
             this.iconKhachHang.Size = new System.Drawing.Size(58, 46);
             this.iconKhachHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,15 +161,15 @@
             // 
             // btnKhachHang
             // 
-            this.btnKhachHang.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnKhachHang.BackColor = System.Drawing.Color.DarkOrange;
             this.btnKhachHang.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnKhachHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed;
             this.btnKhachHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.Location = new System.Drawing.Point(65, 383);
+            this.btnKhachHang.Location = new System.Drawing.Point(3, 383);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(261, 65);
+            this.btnKhachHang.Size = new System.Drawing.Size(323, 65);
             this.btnKhachHang.TabIndex = 10;
             this.btnKhachHang.Text = "                     Thêm Khách Hàng";
             this.btnKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,7 +179,7 @@
             // iconBanHang
             // 
             this.iconBanHang.Image = ((System.Drawing.Image)(resources.GetObject("iconBanHang.Image")));
-            this.iconBanHang.Location = new System.Drawing.Point(72, 250);
+            this.iconBanHang.Location = new System.Drawing.Point(9, 250);
             this.iconBanHang.Name = "iconBanHang";
             this.iconBanHang.Size = new System.Drawing.Size(58, 46);
             this.iconBanHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -188,15 +188,15 @@
             // 
             // btnBanHang
             // 
-            this.btnBanHang.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnBanHang.BackColor = System.Drawing.Color.DarkOrange;
             this.btnBanHang.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnBanHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed;
             this.btnBanHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             this.btnBanHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBanHang.ForeColor = System.Drawing.Color.White;
-            this.btnBanHang.Location = new System.Drawing.Point(62, 240);
+            this.btnBanHang.Location = new System.Drawing.Point(0, 240);
             this.btnBanHang.Name = "btnBanHang";
-            this.btnBanHang.Size = new System.Drawing.Size(261, 65);
+            this.btnBanHang.Size = new System.Drawing.Size(323, 65);
             this.btnBanHang.TabIndex = 6;
             this.btnBanHang.Text = "                    Sản Phẩm";
             this.btnBanHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,24 +206,24 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(79, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 172);
+            this.pictureBox1.Size = new System.Drawing.Size(281, 234);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // btnTaiKhoan
             // 
-            this.btnTaiKhoan.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnTaiKhoan.BackColor = System.Drawing.Color.DarkOrange;
             this.btnTaiKhoan.FlatAppearance.BorderColor = System.Drawing.Color.OrangeRed;
             this.btnTaiKhoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed;
             this.btnTaiKhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.OrangeRed;
             this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(65, 454);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(3, 454);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(264, 65);
+            this.btnTaiKhoan.Size = new System.Drawing.Size(326, 65);
             this.btnTaiKhoan.TabIndex = 14;
             this.btnTaiKhoan.Text = "                     Tài Khoản";
             this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

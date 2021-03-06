@@ -20,12 +20,14 @@ namespace QuanLyBatDongSan.DAO
 
         public DataTable showsanpham()
         {
+            DataTable dataTable = new DataTable();
             string query = "select MaBDS, TrangThai,DiaChi,tinh, QuanHuyen, PhuongXa,LoaiBDS,ThoiGianXayDung,TinhTrangHienTai,PhapLy,DienTichTrenSo,DienTichSuDung,MatTien,DuongRong,Huong,SoTang,ThongTin,Gia,NguoiDang,TrangThaiBaiDang, LyDoTraVe  from BATDONGSAN";
             if(!biencucbo.loaitaikhoan.Equals("admin"))
             {
                 query = String.Format("select MaBDS, TrangThai,DiaChi,tinh, QuanHuyen, PhuongXa,LoaiBDS,ThoiGianXayDung,TinhTrangHienTai,PhapLy,DienTichTrenSo,DienTichSuDung,MatTien,DuongRong,Huong,SoTang,ThongTin,Gia,NguoiDang,TrangThaiBaiDang, LyDoTraVe  from BATDONGSAN where TrangThaiBaiDang = N'Duyệt' OR NguoiDang = '{0}'", biencucbo.taikhoan);
             } 
-            return SQLconnect.Instance.ExecuteQuery(query);
+            dataTable = SQLconnect.Instance.ExecuteQuery(query);
+            return dataTable;
         }
 
         public DataTable showsanphambyID(String maBDS)
@@ -52,15 +54,23 @@ namespace QuanLyBatDongSan.DAO
             string query = "delete FROM  FileUpload where id='" + id + "'";
             SQLconnect.Instance.ExecuteNonQuery(query);
         }
-        public int themDL(string MaBDS, string TrangThai, string DiaChi, string PhuongXa, string QuanHuyen, string tinh, string LoaiBDS, string ThoiGianXayDung, string TinhTrangHienTai, string PhapLy,string DienTichTrenSo, string DienTichSuDung, string MatTien, string DuongRong, string Huong, string SoTang, string ThongTin, decimal Gia, string NguoiDang)
+
+        public DataTable getFile(string id)
         {
+            string query = "select * FROM  FileUpload where id='" + id + "'";
+            return SQLconnect.Instance.ExecuteQuery(query);
+        }
+        public int themDL(string MaBDS, string TrangThai, string DiaChi, string PhuongXa, string QuanHuyen, string tinh, string LoaiBDS, string ThoiGianXayDung, string TinhTrangHienTai, string PhapLy,string DienTichTrenSo, string DienTichSuDung, string MatTien, string DuongRong, string Huong, string SoTang, string ThongTin, string Gia, string NguoiDang)
+        {
+            Gia = string.Format("{0:0,0} VNĐ", Decimal.Parse(Gia), System.Globalization.NumberStyles.Any);
             string query = string.Format("INSERT INTO BATDONGSAN(MaBDS, TrangThai,DiaChi,PhuongXa,QuanHuyen,LoaiBDS,ThoiGianXayDung,TinhTrangHienTai,PhapLy,DienTichTrenSo,DienTichSuDung,MatTien,DuongRong,Huong,SoTang,ThongTin,Gia,NguoiDang, tinh, TrangThaiBaiDang) values('{18}',N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}',N'{6}',N'{7}','{8}','{9}', '{10}', '{11}', '{12}', '{13}', N'{14}', '{15}', '{16}', N'{17}', N'Chưa Duyệt')", TrangThai, DiaChi, PhuongXa, QuanHuyen, LoaiBDS, ThoiGianXayDung, TinhTrangHienTai, PhapLy, DienTichTrenSo, DienTichSuDung, MatTien, DuongRong, Huong, SoTang, ThongTin, Gia, NguoiDang, tinh, MaBDS);
             return SQLconnect.Instance.ExecuteNonQuery(query);
 
         }
 
-        public int suaDL(string TrangThai, string DiaChi, string PhuongXa, string QuanHuyen, string tinh, string LoaiBDS, string ThoiGianXayDung, string TinhTrangHienTai, string PhapLy, string DienTichTrenSo, string DienTichSuDung, string MatTien, string DuongRong, string Huong, string SoTang, string ThongTin, decimal Gia, string NguoiDang, string maBDS)
+        public int suaDL(string TrangThai, string DiaChi, string PhuongXa, string QuanHuyen, string tinh, string LoaiBDS, string ThoiGianXayDung, string TinhTrangHienTai, string PhapLy, string DienTichTrenSo, string DienTichSuDung, string MatTien, string DuongRong, string Huong, string SoTang, string ThongTin, string Gia, string NguoiDang, string maBDS)
         {
+            Gia = string.Format("{0:0,0} VNĐ", Decimal.Parse(Gia), System.Globalization.NumberStyles.Any);
             string query = string.Format("update BATDONGSAN SET TrangThai = N'{0}', DiaChi = N'{1}', PhuongXa = N'{2}', QuanHuyen = N'{3}', LoaiBDS = N'{4}', ThoiGianXayDung = '{5}', TinhTrangHienTai = N'{6}', PhapLy = N'{7}', DienTichTrenSo = '{8}', DienTichSuDung = '{9}', MatTien = '{10}', DuongRong = '{11}', Huong = N'{12}', SoTang = '{13}', ThongTin = N'{14}', Gia = '{15}', tinh = N'{16}' where MaBDS = '{17}'", TrangThai, DiaChi, PhuongXa, QuanHuyen, LoaiBDS, ThoiGianXayDung, TinhTrangHienTai, PhapLy, DienTichTrenSo, DienTichSuDung, MatTien, DuongRong, Huong, SoTang, ThongTin, Gia, tinh, maBDS);
             return SQLconnect.Instance.ExecuteNonQuery(query);
 
@@ -78,13 +88,13 @@ namespace QuanLyBatDongSan.DAO
 
         }
 
-        public DataTable timkiem(string noidung)
+        public DataTable timkiem(string noidung, String loaidat)
         {
-            string query = string.Format("select MaBDS, TrangThai,DiaChi,tinh, QuanHuyen, PhuongXa,LoaiBDS,ThoiGianXayDung,TinhTrangHienTai,PhapLy,DienTichTrenSo,DienTichSuDung,MatTien,DuongRong,Huong,SoTang,ThongTin,Gia,NguoiDang,TrangThaiBaiDang, LyDoTraVe from BATDONGSAN where MaBDS like '{0}' OR  TrangThai like '{0}' OR DiaChi like '{0}' OR PhuongXa like '{0}' OR QuanHuyen like '{0}' OR LoaiBDS like '{0}' OR ThoiGianXayDung like '{0}' OR TinhTrangHienTai like '{0}' OR PhapLy like '{0}' OR DienTichTrenSo like '{0}' OR DienTichSuDung like '{0}' OR MatTien like '{0}' OR DuongRong like '{0}' OR Huong like '{0}' OR SoTang like '{0}' OR ThongTin like '{0}' OR Gia like '{0}'", noidung);
+            string query = string.Format("select MaBDS, TrangThai,DiaChi,tinh, QuanHuyen, PhuongXa,LoaiBDS,ThoiGianXayDung,TinhTrangHienTai,PhapLy,DienTichTrenSo,DienTichSuDung,MatTien,DuongRong,Huong,SoTang,ThongTin,Gia,NguoiDang,TrangThaiBaiDang, LyDoTraVe from BATDONGSAN where (MaBDS like '{0}' OR  TrangThai like '{0}' OR DiaChi like '{0}' OR PhuongXa like '{0}' OR QuanHuyen like '{0}' OR LoaiBDS like '{0}' OR ThoiGianXayDung like '{0}' OR TinhTrangHienTai like '{0}' OR PhapLy like '{0}' OR DienTichTrenSo like '{0}' OR DienTichSuDung like '{0}' OR MatTien like '{0}' OR DuongRong like '{0}' OR Huong like '{0}' OR SoTang like '{0}' OR ThongTin like '{0}' OR Gia like '{0}') and LoaiBDS = N'{1}'", noidung, loaidat);
 
             if (!biencucbo.loaitaikhoan.Equals("admin"))
             {
-                query = string.Format("select MaBDS, TrangThai,DiaChi,tinh, QuanHuyen, PhuongXa,LoaiBDS,ThoiGianXayDung,TinhTrangHienTai,PhapLy,DienTichTrenSo,DienTichSuDung,MatTien,DuongRong,Huong,SoTang,ThongTin,Gia,NguoiDang,TrangThaiBaiDang, LyDoTraVe from BATDONGSAN where (TrangThaiBaiDang = N'Duyệt' OR NguoiDang = '{1}')  AND (MaBDS like '{0}' OR  TrangThai like '{0}' OR DiaChi like '{0}' OR PhuongXa like '{0}' OR QuanHuyen like '{0}' OR LoaiBDS like '{0}' OR ThoiGianXayDung like '{0}' OR TinhTrangHienTai like '{0}' OR PhapLy like '{0}' OR DienTichTrenSo like '{0}' OR DienTichSuDung like '{0}' OR MatTien like '{0}' OR DuongRong like '{0}' OR Huong like '{0}' OR SoTang like '{0}' OR ThongTin like '{0}' OR Gia like '{0}')", noidung, biencucbo.taikhoan);
+                query = string.Format("select MaBDS, TrangThai,DiaChi,tinh, QuanHuyen, PhuongXa,LoaiBDS,ThoiGianXayDung,TinhTrangHienTai,PhapLy,DienTichTrenSo,DienTichSuDung,MatTien,DuongRong,Huong,SoTang,ThongTin,Gia,NguoiDang,TrangThaiBaiDang, LyDoTraVe from BATDONGSAN where (TrangThaiBaiDang = N'Duyệt' OR NguoiDang = '{1}') AND LoaiBDS = N'{2}'  AND (MaBDS like '{0}' OR  TrangThai like '{0}' OR DiaChi like '{0}' OR PhuongXa like '{0}' OR QuanHuyen like '{0}' OR LoaiBDS like '{0}' OR ThoiGianXayDung like '{0}' OR TinhTrangHienTai like '{0}' OR PhapLy like '{0}' OR DienTichTrenSo like '{0}' OR DienTichSuDung like '{0}' OR MatTien like '{0}' OR DuongRong like '{0}' OR Huong like '{0}' OR SoTang like '{0}' OR ThongTin like '{0}' OR Gia like '{0}')", noidung, biencucbo.taikhoan, loaidat);
             }
             return SQLconnect.Instance.ExecuteQuery(query);
         }

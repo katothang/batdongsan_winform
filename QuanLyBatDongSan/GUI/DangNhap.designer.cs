@@ -43,7 +43,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(15, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 19);
@@ -52,9 +52,9 @@
             // 
             // btnlogin
             // 
-            this.btnlogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.ForeColor = System.Drawing.Color.White;
+            this.btnlogin.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnlogin.Location = new System.Drawing.Point(207, 141);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(134, 42);
@@ -87,7 +87,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
             this.label2.Location = new System.Drawing.Point(15, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 19);
@@ -126,6 +126,7 @@
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý Bất Động Sản";
+            this.Load += new System.EventHandler(this.DangNhap_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

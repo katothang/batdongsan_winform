@@ -170,5 +170,10 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
         {
 
         }
+
+        private void dtNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

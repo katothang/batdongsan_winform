@@ -69,12 +69,13 @@
             // 
             // btnXacNhan
             // 
+            this.btnXacNhan.BackColor = System.Drawing.Color.DarkOrange;
             this.btnXacNhan.Location = new System.Drawing.Point(288, 237);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(113, 32);
             this.btnXacNhan.TabIndex = 3;
             this.btnXacNhan.Text = "Xác Nhận";
-            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // label2

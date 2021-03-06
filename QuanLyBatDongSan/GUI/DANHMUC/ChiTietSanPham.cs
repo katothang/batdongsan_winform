@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
 using System.IO;
+using System.Net.Http.Headers;
 
 namespace QuanLyBatDongSan.GUI.DANHMUC
 {
@@ -38,8 +39,8 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
             lbHuong.Text = dataTable.Rows[0]["Huong"].ToString();
             lbSoTang.Text = dataTable.Rows[0]["SoTang"].ToString() + " Tầng";
             lbThongTin.Text = dataTable.Rows[0]["ThongTin"].ToString();
-           
-            lbGiaBDS.Text = string.Format("{0:0,0} VNĐ", Decimal.Parse(dataTable.Rows[0]["Gia"].ToString(), System.Globalization.NumberStyles.Any));
+
+            lbGiaBDS.Text = dataTable.Rows[0]["Gia"].ToString();
             cbDSfile.DataSource = sanphamDAO.Instance.showFilebyID(lbMaDBS.Text);
             cbDSfile.DisplayMember = "FileName";
             cbDSfile.ValueMember = "id";
@@ -167,6 +168,58 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
                 MessageBox.Show("Lỗi Xoá file.!");
             }
             
+        }
+
+        private void cbDSfile_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyFile = "";
+                try
+                {
+                    DataRowView dataRowView = (DataRowView)cbDSfile.SelectedValue;
+                    keyFile = dataRowView.Row.ItemArray[0].ToString();
+
+                }
+                catch
+                {
+                    keyFile = cbDSfile.SelectedValue.ToString();
+                }
+
+                DataTable dataTable = sanphamDAO.Instance.getFile(keyFile);
+
+                pcAnh.Image = byteArrayToImage((byte[])dataTable.Rows[0]["GiayTo"]);
+            }
+            catch
+            {
+                pcAnh.Image = null;
+            }
+            
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            Image returnImage = null;
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                returnImage = Image.FromStream(ms);
+            }
+            return returnImage;
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbTinhTrang_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -121,7 +121,7 @@
             // 
             // btLamMoi
             // 
-            this.btLamMoi.BackColor = System.Drawing.Color.OrangeRed;
+            this.btLamMoi.BackColor = System.Drawing.Color.DarkOrange;
             this.btLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLamMoi.ForeColor = System.Drawing.Color.White;
             this.btLamMoi.Location = new System.Drawing.Point(266, 3);

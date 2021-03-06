@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -78,7 +79,9 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 			tbHuong.Text = gvdata.SelectedRows[0].Cells["Huong"].Value.ToString();
 			tbSoTang.Text = gvdata.SelectedRows[0].Cells["SoTang"].Value.ToString();
 			tbThongTin.Text = gvdata.SelectedRows[0].Cells["ThongTin"].Value.ToString();
-			tbGiaBDS.Text = gvdata.SelectedRows[0].Cells["Gia"].Value.ToString();
+
+			tbGiaBDS.Text = new String(gvdata.SelectedRows[0].Cells["Gia"].Value.ToString().Where(Char.IsDigit).ToArray());
+	
 			
 		}
 
@@ -88,7 +91,7 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 			try
 			{
 				
-				sanphamDAO.Instance.themDL(tbMaBDS.Text, tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, decimal.Parse(tbGiaBDS.Text), biencucbo.taikhoan);
+				sanphamDAO.Instance.themDL(tbMaBDS.Text, tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, tbGiaBDS.Text, biencucbo.taikhoan);
 				MessageBox.Show("thêm thành công");
 				//insert vao bang nhap hàng
 				
@@ -124,7 +127,7 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 					fileName = sanphamDAO.Instance.showFilebyID(tbMaBDS.Text).Rows[0]["FileName"].ToString();
 				}
 				*/
-				sanphamDAO.Instance.suaDL(tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, decimal.Parse(tbGiaBDS.Text), "admin", tbMaBDS.Text);
+				sanphamDAO.Instance.suaDL(tbTrangThai.Text, tbDiaChi.Text, cbXa.Text, cbHuyen.Text, cbTinh.Text, tbLoaiBDS.Text, dtThoiGianXD.Text, tbTinhTrang.Text, tbPhapLy.Text, tbDienTichTrenSo.Text, tbDienTichSuDung.Text, tbMatTien.Text, tbDuongRong.Text, tbHuong.Text, tbSoTang.Text, tbThongTin.Text, tbGiaBDS.Text, "admin", tbMaBDS.Text);
 				MessageBox.Show("Sửa Thành Công");
 				//insert vao bang nhap hàng
 
@@ -159,7 +162,7 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 		{
 			try
 			{
-				gvdata.DataSource = sanphamDAO.Instance.timkiem(tbTimKiem.Text);
+				gvdata.DataSource = sanphamDAO.Instance.timkiem(tbTimKiem.Text, cbTimLoaiDat.Text);
 			}
 			catch (Exception)
 			{
@@ -285,5 +288,10 @@ namespace QuanLyBatDongSan.GUI.DANHMUC
 			gD.ShowDialog();
 			this.Show();
 		}
+
+        private void tbThongTin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

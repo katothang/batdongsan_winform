@@ -41,11 +41,11 @@
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.gvdata = new System.Windows.Forms.DataGridView();
             this.pnmenu = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbMaNhom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbTenNhom = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbMaNhom = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcDelete)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcEdit)).BeginInit();
@@ -137,7 +137,7 @@
             // 
             // btLamMoi
             // 
-            this.btLamMoi.BackColor = System.Drawing.Color.OrangeRed;
+            this.btLamMoi.BackColor = System.Drawing.Color.DarkOrange;
             this.btLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLamMoi.ForeColor = System.Drawing.Color.White;
             this.btLamMoi.Location = new System.Drawing.Point(266, 3);
@@ -183,24 +183,6 @@
             this.pnmenu.TabIndex = 9;
             this.pnmenu.TabStop = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(126, 61);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Tên Nhóm:";
-            // 
-            // tbTenNhom
-            // 
-            this.tbTenNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTenNhom.Location = new System.Drawing.Point(294, 55);
-            this.tbTenNhom.Name = "tbTenNhom";
-            this.tbTenNhom.Size = new System.Drawing.Size(231, 26);
-            this.tbTenNhom.TabIndex = 23;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -218,6 +200,24 @@
             this.tbMaNhom.Name = "tbMaNhom";
             this.tbMaNhom.Size = new System.Drawing.Size(231, 26);
             this.tbMaNhom.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(126, 61);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Tên Nhóm:";
+            // 
+            // tbTenNhom
+            // 
+            this.tbTenNhom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenNhom.Location = new System.Drawing.Point(294, 55);
+            this.tbTenNhom.Name = "tbTenNhom";
+            this.tbTenNhom.Size = new System.Drawing.Size(231, 26);
+            this.tbTenNhom.TabIndex = 23;
             // 
             // NhomKH
             // 

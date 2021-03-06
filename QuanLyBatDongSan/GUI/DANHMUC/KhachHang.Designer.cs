@@ -41,6 +41,8 @@
             this.tbTimKiem = new System.Windows.Forms.TextBox();
             this.gvdata = new System.Windows.Forms.DataGridView();
             this.pnmenu = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbMaKH = new System.Windows.Forms.TextBox();
             this.cbbNhanVienQL = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cbbNhomKH = new System.Windows.Forms.ComboBox();
@@ -59,8 +61,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label9 = new System.Windows.Forms.Label();
-            this.tbMaKH = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcDelete)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcEdit)).BeginInit();
@@ -152,7 +152,7 @@
             // 
             // btLamMoi
             // 
-            this.btLamMoi.BackColor = System.Drawing.Color.OrangeRed;
+            this.btLamMoi.BackColor = System.Drawing.Color.DarkOrange;
             this.btLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLamMoi.ForeColor = System.Drawing.Color.White;
             this.btLamMoi.Location = new System.Drawing.Point(266, 3);
@@ -212,6 +212,24 @@
             this.pnmenu.Size = new System.Drawing.Size(891, 243);
             this.pnmenu.TabIndex = 9;
             this.pnmenu.TabStop = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(50, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 20);
+            this.label9.TabIndex = 42;
+            this.label9.Text = "Mã KH:";
+            // 
+            // tbMaKH
+            // 
+            this.tbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMaKH.Location = new System.Drawing.Point(151, 37);
+            this.tbMaKH.Name = "tbMaKH";
+            this.tbMaKH.Size = new System.Drawing.Size(298, 26);
+            this.tbMaKH.TabIndex = 41;
             // 
             // cbbNhanVienQL
             // 
@@ -308,6 +326,7 @@
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(298, 26);
             this.dtNgaySinh.TabIndex = 23;
+            this.dtNgaySinh.ValueChanged += new System.EventHandler(this.dtNgaySinh_ValueChanged);
             // 
             // tbSoDienThoai
             // 
@@ -383,24 +402,6 @@
             this.label7.Size = new System.Drawing.Size(49, 20);
             this.label7.TabIndex = 27;
             this.label7.Text = "SĐT:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(50, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 20);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "Mã KH:";
-            // 
-            // tbMaKH
-            // 
-            this.tbMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaKH.Location = new System.Drawing.Point(151, 37);
-            this.tbMaKH.Name = "tbMaKH";
-            this.tbMaKH.Size = new System.Drawing.Size(298, 26);
-            this.tbMaKH.TabIndex = 41;
             // 
             // KhachHang
             // 

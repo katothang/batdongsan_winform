@@ -36,5 +36,10 @@ namespace QuanLyBatDongSan.GUI
 				MessageBox.Show("Tên Tài khoản và mật khẩu không chính xác");
 			}
 		}
-	}
+
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
